@@ -1,3 +1,18 @@
+:root {
+    --body-color: #80dba5;
+    --font: 'Quicksand', sans-serif;
+}
 body {
-    background-color: aqua;
+    background-color: var(--body-color);
+    font-family: var(--font);
+}
+
+li {
+    display: flex;
+    background-color: beige;
+    list-style: none;
+    justify-content: space-between;
+    height: 35px;
+    align-items: center;
+    flex-direction: column;
 }
