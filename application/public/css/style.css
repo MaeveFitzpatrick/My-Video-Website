@@ -1,17 +1,19 @@
 :root {
-    --body-color: #80dba5;
+    --color1: #a6eff8b7;
+    --color2: #bef5c0ce;
+    --color3: #fbffdcbe;
     --font: 'Quicksand', sans-serif;
 }
 
 h1 {
-    order: 0;
+    padding:0px;
+    margin: 0px;
 
 }
 body {
     display: flex;
-    background-color: var(--body-color);
+    background-color: var(--color1);
     font-family: var(--font);
-    /* min-height: 100px; */
     flex-direction: column;
 }
 
@@ -20,51 +22,54 @@ nav ul {
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: beige;
+    background-color: var(--color2);
     list-style: none;
     
 }
 
+main {
+    background-color: var(--color2);
+}
 
 ul{
     padding-inline-start: 0px;
 }
 li {
     border-color: black;
-    border-style: dashed;
+    border-style:double;
     padding: 10px;
     border-radius: 7px;
 }
 
 form {
-    background-color: rgba(255, 188, 80, 0.781);
+    background-color: var(--color4);
+    padding: 5px;
 }
 
 .button {
-    background-color: #ffffff;
-    border-color: #4CAF50;
+    background-color: #f0f8ff;
+    border-color: #fbffdcbe;
     border-radius: 7px;
-    color: #4CAF50;
-    padding: 2px 4px;
+    color: #000000;
+    padding: 2px;
     text-align: center;
     display: inline-block;
     font-size: 15px;
+    font-family: var(--font);
     cursor:pointer;
   }
   
   .button:hover {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--color3);
+    border-color: var(--color3);
   }
 
   input {
-    background-color: aqua;
+    background-color: var(--color3);
     border-radius: 7px;
   }
 
-  main {
-    background-color: cadetblue;
-  }
+
 
 @media screen and (min-width: 550px) {
     nav ul{
