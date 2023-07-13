@@ -55,24 +55,32 @@
             <h3>
                 
                 Create a username and password:</h3>
-            <form>
-                <label class="label-text" for="Username">User Name:</label>
-                <input class="input-text" type="text" id="User Name" placeholder="User Name" />
-                <label class="label-text" for="Email">Email:</label>
-                <input class="input-text" type="text" id="Email" placeholder="Email" />
-                <label class="label-text" for="Password">Password:</label>
-                <input class="input-text" type="text" id="Password" placeholder="Password" />
-                <label class="label-text" for="ConfirmPassword">Username:</label>
-                <input class="input-text" type="text" id="Confirm Password" placeholder="Confirm Password" />
+            <form id="registration-form" class="form-container">
+                <label class="label-text" for="username">User Name:</label>
+                <input class="input-text" type="text" id="username" placeholder="User Name" />
+                <div id="username-requirements" class="validation-text"></div>
+               
+                <label class="label-text" for="email">Email:</label>
+                <input class="input-text" type="email" id="email" placeholder="Email" />
+                <div id="email-requirements" class="validation-text"></div>
                 
+                <label class="label-text" for="password">Password:</label>
+                <input class="input-text" type="text" id="password" placeholder="Password" />
+                <div id="password-requirements" class="validation-text"></div>
+                
+                <label class="label-text" for="confirm-password">Confirm Password:</label>
+                <input class="input-text" type="text" id="confirm-password" placeholder="Confirm Password" />
+                <div id="conpassword-requirements" class="validation-text"></div>
+                <small></small>
                 <label for="age confirmation">Please confirm that you are at least 13 years of age.</label>
-                <input type="checkbox" id="age confirmation" />
+                <input type="checkbox" id="age confirmation" required />
                 <label for="TOS">Please accept the </label>
                 <a href="#">Terms of Service </a>
                 <label for="and">and</label> 
                 <a href="#">Privacy Rules </a>
-                <input type="checkbox" id="TOS" />
+                <input type="checkbox" id="TOS" required />
                 <button class="button">Submit</button>
+                
             </form>
         </div>
     </main>
