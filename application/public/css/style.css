@@ -32,7 +32,7 @@ h5{
 
 .login-container {
   display:grid;
-  align-items: center;
+  grid-area: auto;
 }
 
 .register-container{
@@ -61,9 +61,17 @@ body {
     font-family: var(--font1);
 }
 
+
+
+.main-content {
+  background-color: green;
+  animation: fadeOut 200s;
+}
+
 main {
   display:grid;
-  max-width: max-content;
+  grid-row: auto;
+  /* max-width: max-content; */
     background-color: var(--color2);
     border-color: #000000;
     border-style: double;

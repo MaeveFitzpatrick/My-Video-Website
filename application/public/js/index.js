@@ -3,6 +3,7 @@ var container = document.getElementById('main-content');
 var url = "https://jsonplaceholder.typicode.com/albums/2/photos";
 
 function fadeOut(ev){
+    var imageCounter
     var counter = 1;
     const divElement = ev.currentTarget;  
     var timer = setInterval(function(){
