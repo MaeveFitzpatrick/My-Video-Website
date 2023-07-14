@@ -17,9 +17,11 @@ const required = value => value === '' ? false : true;
 const minimumInputLength = (length, min) => length < min ? false : true;
 
 
-// const validEmail = (email) => {
+const validEmail = (email) => {
+    const emailResult = new RegExp("/\S+@\S+\.\S+/");
+    return emailResult.test(email);
 
-// }
+}
 
 const containsSpecialChars = (password) => {
     const result = new RegExp("(?=.*[!@#$%^&*])");
@@ -66,10 +68,18 @@ const checkUsername = () => {
     return valid;
 };
 
+
 // const checkEmail = () => {
 //     var valid = false;
-//     const email = emailV.value();
-//     if(!requ
+//     const emailInput = emailV.value;
+
+//     if(){
+//         displayError(emailV, "Email must be the following format: ______@_____.___");
+//     } else {
+//         displaySuccess(emailV);
+//         valid = true;
+//     }
+//     return valid;
 // }
 
 const checkPassword = () => {
