@@ -58,6 +58,11 @@ fetch(url)
         container.append(...cards);
         
 })
+
+if(1==1){
+    let x=6;
+}
+console.log(x);
     
 
 
