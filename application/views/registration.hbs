@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <script defer src="../js/index.js"></script>
+    <title>Registration</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,17 +14,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inconsolata:wght@300&family=Jost:wght@300&family=Montserrat:wght@300&family=Nanum+Gothic&family=Nunito:wght@300&family=Quicksand&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<script defer src="../js/validation.js"></script>
 </head>
 
 <h1>
-    <img src="../images/house.png" alt="house" width="30px" height="25px">
-    Home
+    <img src="../images/paper2.png" alt="register" width="30px" height="27px">
+    Register Here
 </h1>
-
 
 <body>
     <header>
-        
         <nav>
             <ul>
                 <li>
@@ -51,10 +49,40 @@
             </ul>
         </nav>
     </header>
-
-    <main id = "main-content">
-        <label class="label-text" for="countdown">Number of Images: </label>
-        
+    <main>
+        <div class="register-container">
+            
+            <h3>
+                
+                Create a username and password:</h3>
+            <form id="registration-form" class="form-container">
+                <label class="label-text" for="username">User Name:</label>
+                <input class="input-text" type="text" id="username" placeholder="User Name" />
+                <div id="username-requirements" class="validation-text"></div>
+               
+                <label class="label-text" for="email">Email:</label>
+                <input class="input-text" type="email" id="email" placeholder="Email" />
+                <div id="email-requirements" class="validation-text"></div>
+                
+                <label class="label-text" for="password">Password:</label>
+                <input class="input-text" type="text" id="password" placeholder="Password" />
+                <div id="password-requirements" class="validation-text"></div>
+                
+                <label class="label-text" for="confirm-password">Confirm Password:</label>
+                <input class="input-text" type="text" id="confirm-password" placeholder="Confirm Password" />
+                <div id="conpassword-requirements" class="validation-text"></div>
+                <small></small>
+                <label for="age confirmation">Please confirm that you are at least 13 years of age.</label>
+                <input type="checkbox" id="age confirmation" required />
+                <label for="TOS">Please accept the </label>
+                <a href="#">Terms of Service </a>
+                <label for="and">and</label> 
+                <a href="#">Privacy Rules </a>
+                <input type="checkbox" id="TOS" required />
+                <button class="button">Submit</button>
+                
+            </form>
+        </div>
     </main>
     <footer>
         Maeve Fitzpatrick &copy; 2023

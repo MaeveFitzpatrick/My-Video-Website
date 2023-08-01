@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <script defer src="../js/index.js"></script>
+    <title>View A Video</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,16 +14,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inconsolata:wght@300&family=Jost:wght@300&family=Montserrat:wght@300&family=Nanum+Gothic&family=Nunito:wght@300&family=Quicksand&family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
-
 <h1>
-    <img src="../images/house.png" alt="house" width="30px" height="25px">
-    Home
+    <img src="../images/tvscreen.png" alt="tv screen" width="35px" height="25px">
+    View Your Post
 </h1>
-
-
 <body>
     <header>
-        
         <nav>
             <ul>
                 <li>
@@ -51,14 +45,17 @@
             </ul>
         </nav>
     </header>
-
-    <main id = "main-content">
-        <label class="label-text" for="countdown">Number of Images: </label>
-        
+    <main>
+        <h2>Post Title</h2>
+        <h4>Post Author</h4>
+        <h5>Post Creation Time</h5>
+        <video width="500" height="300" controls>
+            <source src="videos\sample2.mp4" type="video/mp4" >
+        </video>
+        <h4>Comments:</h4>
     </main>
     <footer>
         Maeve Fitzpatrick &copy; 2023
     </footer>
 </body>
-
 </html>
