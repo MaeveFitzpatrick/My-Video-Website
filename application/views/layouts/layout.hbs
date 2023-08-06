@@ -4,8 +4,32 @@
     <title>{{title}}</title>
     <link rel="icon" href="/public/favicon.ico" sizes="70x70" type="image/ico">
     <link rel='stylesheet' href='/public/css/style.css' />
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Inconsolata:wght@300&family=Jost:wght@300&family=Montserrat:wght@300&family=Nanum+Gothic&family=Nunito:wght@300&family=Quicksand&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+  {{#each css}}
+    <link rel="stylesheet" type="text/css" href="/public/css/{{this}}"
+  {{/each}}
+
+  {{#each js}}
+    <script defer src="/public/js/{{this}}"></script>
+  {{/each}}  
   </head>
   <body>
-    {{{body}}}
+    <div id="container">
+      {{log this}}
+      {{> header}}
+      {{> nav}}
+      {{{body}}}
+      {{> footer}}
+    </div>
+    
   </body>
 </html>

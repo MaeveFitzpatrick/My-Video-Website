@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "C++ Compiler",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "C:/MinGW/bin",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${CSC340-Programming_Methodology/Assignments}",
+            "environment": [],
+            "externalConsole": true
+        },
+    ]
+}

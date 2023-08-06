@@ -188,5 +188,7 @@ form {
     }
   }
 
-
+.error-container > * {
+  color: black;
+}
 
