@@ -4,10 +4,15 @@
                     <img src="../images/house.png" alt="house" width="20px" height="15px">
                     <a href="/">Home</a>
                 </li>
-                <li>
-                    <img src="../images/lock.png" alt="lock" width="15px" height="15px">
-                    <a href="/login">Log In</a>
-                </li>
+                {{#if isLoggedIn}}
+                   {{> userdropdown}}
+                {{else}}
+                    <li>
+                        <img src="../images/lock.png" alt="lock" width="15px" height="15px">
+                        <a href="/login">Log In</a>
+                    </li>
+                {{/if}}
+                
                 <li>
                     <img src="../images/paper2.png" alt="register" width="20px" height="17px">
                     <a href="/registration">Register</a>
@@ -20,5 +25,8 @@
                     <img src="../images/tvscreen.png" alt="tv screen" width="25px" height="15px">
                     <a href="/viewpost"> View Post</a>
                 </li>
+
+              
             </ul>
         </nav>
+        {{log this}}

@@ -24,14 +24,16 @@
             <h3> Create a username and password:</h3>
         </header>
             
-            <form id="registration-form" class="form-container">
+            <form id="registration-form" class="form-container" action="/users/registration" method="post" enctype="application/x-www-form-urlencoded">
                 <div class="input">
+
                     <label class="label-text" for="username">User Name:</label>
                     <input 
                         class="input-text"
                         type="text"
                         id="username"
                         placeholder="User Name"
+                        name="username"
                     />
                     <div id="username-requirements" class="validation-text"></div>
                 </div>
@@ -43,31 +45,51 @@
                         type="email"
                         id="email"
                         placeholder="Email"
+                        name="email"
                     />
                     <div id="email-requirements" class="validation-text"></div>
                </div>
                 
                 <div class="input">
                     <label class="label-text" for="password">Password:</label>
-                    <input class="input-text" type="text" id="password" placeholder="Password" />
+                    <input 
+                    class="input-text" 
+                    type="text" id="password" 
+                    placeholder="Password"
+                    name="password"
+                     />
                     <div id="password-requirements" class="validation-text"></div>
                 </div>
                 
                 <div class="input">
                     <label class="label-text" for="confirm-password">Confirm Password:</label>
-                    <input class="input-text" type="text" id="confirm-password" placeholder="Confirm Password" />
+                    <input 
+                    class="input-text" 
+                    type="text" 
+                    id="confirm-password" 
+                    placeholder="Confirm Password"
+                    name="confirmPassword" />
                     <div id="conpassword-requirements" class="validation-text"></div>
                 </div>
                 
                 <div class="checkboxes">
                     <small></small>
                     <label for="age confirmation">Please confirm that you are at least 13 years of age.</label>
-                    <input type="checkbox" id="age confirmation" required />
+                    <input 
+                    type="checkbox" 
+                    id="age confirmation"
+                    name="ageConfirmation" 
+                    required />
                     <label for="TOS">Please accept the </label>
                     <a href="#">Terms of Service </a>
                     <label for="and">and</label> 
                     <a href="#">Privacy Rules </a>
-                    <input type="checkbox" id="TOS" required />
+                    <input 
+                    type="checkbox" 
+                    id="TOS"
+                    name="termsConfirmation" 
+                    required
+                     />
                 </div>
                 
                 <div class="button">

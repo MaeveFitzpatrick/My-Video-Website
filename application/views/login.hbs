@@ -17,27 +17,28 @@
                 Log In
             </h1>
         </header>
-            
-            <form id="login-form" class="input-form">
+
+
+            <form id="login-form" class="form-container" action="/users/login" method="post" enctype="application/x-www-form-urlencoded">
                 <div class="input">
-                    <label class="username tag" for="username:">Username:</label>
+                    <label class="label-text" for="username:">Username:</label>
                     <input
-                        class="username input"
+                        class="input-text"
                         id=”username”
                         type=”text”
                         placeholder="Enter your username"
-                        required
+                        name="username"
                     />
                 </div>
-                <div class="input">
-                    <label class="password tag" for=”password”>Password:</label>
-                    <input
-                        class="password input"
-                        id="password" 
-                        type="password"
-                        placeholder="Enter your password"
-                        required
-                    />
+                 <div class="input">
+                    <label class="label-text" for="password">Password:</label>
+                    <input 
+                    class="input-text" 
+                    type="text" id="password" 
+                    placeholder="Password"
+                    name="password"
+                     />
+                    <div id="password-requirements" class="validation-text"></div>
                 </div>
                 <div class="button">
                     <button class="button">Submit</button>

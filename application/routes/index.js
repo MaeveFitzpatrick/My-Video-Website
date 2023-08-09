@@ -18,7 +18,7 @@ router.get("/registration", function(req,res,next){
 });
 
 router.get("/postvideo", function(req,res,next){
-  res.render('postvideo',{title:"Post Video", css:["formstyle.css"], js:["validation.js"]})
+  res.render('postvideo',{title:"Post Video", css:["formstyle.css"]/*, js:["validation.js"]*/})
 });
 
 router.get("/viewpost", function(req,res,next){
