@@ -22,6 +22,7 @@ module.exports = {
     },
 
     getPostById: async function(req,res,next){
+
         var { id } = req.params;
         
         try{
@@ -45,5 +46,15 @@ module.exports = {
         } catch (err) {
             next(err);
         }
+    },
+    getCommentsForPostsById: async function(req,res,next){
+
+        next();
     }
+    ,
+    getRecentPosts: async function(req,res,next){
+        next();
+    }
+
+
 }

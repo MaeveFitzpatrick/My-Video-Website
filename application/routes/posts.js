@@ -49,8 +49,36 @@ router.post('/create', isLoggedIn, upload.single('uploadVideo'), makeThumbnail, 
     }
 });
 
+//localhost:3000/posts/search?key=value
+router.get("/search", async function(req,res,next){
+  var {key} = req.query;
+  const searchValue = `%${key}%`;
 
-router.get("/:id(\\d+)", getPostById ,function(req,res,next){
+  try {
+    var [results, _] = await db.execute(`select id, title, description, thumbnail, concat_ws("", title, description) as haystack
+    FROM posts
+    HAVING haystack like ?;`, [searchValue]);
+    if(results && results.length > 0){
+      res.locals.count = results.length;
+      res.locals.results = results;
+      res.locals.searchValue = key;
+      return res.render('index');
+    }else{
+      //no rows returned
+      //respond in someway
+      res.locals.count = results.length;
+      res.locals.results = results;
+      return res.render('index');
+    }
+    
+  }catch(err) {
+    next(err);
+  }
+})
+
+
+
+router.get("/:id(\\d+)", getPostById, getCommentsForPostById,function(req,res,next){
     res.render("viewpost",{
       title:`View Post ${req.params.id}`, 
       js:["viewpost.js"]

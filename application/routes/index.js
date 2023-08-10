@@ -3,10 +3,10 @@ const { isLoggedIn } = require("../middleware/auth");
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.locals.title = "CSC 317 APP";
-  res.locals.name = "Maeve Fitzpatrick";
-  res.locals.isLogged = true;
+router.get('/', 
+// getRecentPosts, 
+function(req, res, next) {
+  // res.locals.results=[];
   res.render("index");
 });
 

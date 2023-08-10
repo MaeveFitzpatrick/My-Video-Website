@@ -36,4 +36,20 @@
     </div>
     
   </body>
+
+  {{!-- <script>
+    var searchButton = document.getElementById('searchButton');
+    if(searchButton){
+      searchButton.addEventListener('click', function(ev){
+        var searchText = document.getElementById('searchText').value;
+        if(!searchText) return;
+        const searchURL = `/posts/search?key=${searchText}`
+        fetch(searchURL)
+          .then((resp) => resp.json())
+          .then((data) => {
+            console.log(data);
+          })
+      });
+    }
+  </script> --}}
 </html>
