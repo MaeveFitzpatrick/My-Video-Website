@@ -2,10 +2,18 @@ var express = require('express');
 var router = express.Router();
 var bcrypt = require('bcrypt');
 const db = require('../config/database');
+const validator = require('validator');
 
 //localhost:3000/users/registration
 router.post("/registration", async function(req,res,next){
   var{ username, email, password } = req.body;
+  // var score = validator.isStrongPassword(password)
+  // if(validator.isStrongPassword(password)){
+  //   return res.send("is strong password")
+  // } else {
+  //   return res.send("is weak password");
+  // }
+
   //server side validation
   //rules check
   try{
@@ -15,12 +23,21 @@ router.post("/registration", async function(req,res,next){
     [username]);
     if(results && results.length > 0){
       console.log(`${username} already exists`);
-      return res.redirect("/registration");
+      req.flash("error", "Registration failed: Username already exists.");
+      return req.session.save(function(err){
+        if(err) next(err);
+        return res.redirect("/registration");
+      })
+      
     }
     var[results, _] = await db.execute(`select id from users where email=?`, [email]);
     if(results && results.length > 0){
       console.log(`${email} already exists`);
-      return res.redirect("/registration");
+      req.flash("error", "Registration failed: Email already exists.");
+      return req.session.save(function(err){
+        if(err) next(err);
+        return res.redirect("/registration");
+      })
     }
 
     //allows for hashed passwords
@@ -34,7 +51,11 @@ router.post("/registration", async function(req,res,next){
     
   //respond 
      if(insertResult && insertResult.affectedRows == 1){
+      req.flash("success", "Registration successful: Please log in.");
+      return req.session.save(function(err){
+        if(err) next(err);
         return res.redirect("/login");
+      })
      } else {
         return res.redirect("/registration");
      }
@@ -59,7 +80,12 @@ router.post("/login", async function(req, res, next){
     );
     const user = results[0];
     if(!user){
-      return res.redirect("/login");
+      req.flash("error", "Login Failed: Invalid Credentials");
+      return req.session.save(function(err){
+        if(err) next(err);
+        return res.redirect("/login");
+      })
+      
     }
     var passwordsMatch = await bcrypt.compare(password, user.password);
     if(passwordsMatch){
@@ -68,9 +94,17 @@ router.post("/login", async function(req, res, next){
         username: user.username,
         email: user.email
       };
-      return res.redirect("/");
+      req.flash("success", "You are now logged in.");
+      return req.session.save(function(err){
+        if(err) next(err);
+        return res.redirect("/");
+      })
     } else {
-      return res.redirect("/login");
+      req.flash("error", "Login Failed: Invalid Credentials");
+      return req.session.save(function(err){
+        if(err) next(err);
+        return res.redirect("/login");
+      })
     }
   }catch(err){
     next(err);

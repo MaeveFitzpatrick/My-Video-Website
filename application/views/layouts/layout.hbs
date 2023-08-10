@@ -22,13 +22,17 @@
     <script defer src="/public/js/{{this}}"></script>
   {{/each}}  
   </head>
+
   <body>
     <div id="container">
-      {{log this}}
+      {{#if (isNotEmpty this.messages)}}
+        {{> flashmessage this}}
+      {{/if}}
       {{> header}}
       {{> nav}}
       {{{body}}}
       {{> footer}}
+      
     </div>
     
   </body>

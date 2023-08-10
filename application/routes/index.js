@@ -1,4 +1,5 @@
 var express = require('express');
+const { isLoggedIn } = require('./middleware/auth');
 var router = express.Router();
 
 /* GET home page. */
@@ -17,7 +18,8 @@ router.get("/registration", function(req,res,next){
   res.render('registration',{title:"Registration", css:["formstyle.css"]})
 });
 
-router.get("/postvideo", function(req,res,next){
+
+router.get("/postvideo", isLoggedIn, function(req,res,next){
   res.render('postvideo',{title:"Post Video", css:["formstyle.css"]/*, js:["validation.js"]*/})
 });
 

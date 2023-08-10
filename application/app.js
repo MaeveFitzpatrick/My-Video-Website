@@ -8,6 +8,7 @@ const logger = require("morgan");
 const handlebars = require("express-handlebars");
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
+const flash = require('express-flash');
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
@@ -27,7 +28,11 @@ app.engine(
     partialsDir: path.join(__dirname, "views/partials"), // where to look for partials
     extname: ".hbs", //expected file extension for handlebars files
     defaultLayout: "layout", //default layout for app, general template for all pages in app
-    helpers: {}, //adding new helpers to handlebars for extra functionality
+    helpers: {
+      isNotEmpty: function(obj){
+        return obj && obj.constructor === Object && Object.keys(obj).length > 0;
+      },
+    }, //adding new helpers to handlebars for extra functionality
   })
 );
 
@@ -58,6 +63,8 @@ app.use(session({
     httpOnly: true
   }
 }));
+
+app.use(flash());
 
 app.use(function(req,res,next){
   console.log(req.session);
