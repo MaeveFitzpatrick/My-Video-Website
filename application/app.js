@@ -11,6 +11,7 @@ const MySQLStore = require('express-mysql-session')(session);
 const flash = require('express-flash');
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
+const postsRouter = require("./routes/posts");
 
 const app = express();
 
@@ -32,6 +33,11 @@ app.engine(
       isNotEmpty: function(obj){
         return obj && obj.constructor === Object && Object.keys(obj).length > 0;
       },
+      formatDateString: function(dateString){
+        return new Date(dateString).toLocaleDateString("en-us",{
+          dateStyle:"full"
+        });
+      }
     }, //adding new helpers to handlebars for extra functionality
   })
 );
@@ -77,7 +83,7 @@ app.use(function(req,res,next){
 
 app.use("/", indexRouter); // route middleware from ./routes/index.js
 app.use("/users", usersRouter); // route middleware from ./routes/users.js
-
+app.use("/posts", postsRouter);
 
 /**
  * Catch all route, if we get to here then the 
