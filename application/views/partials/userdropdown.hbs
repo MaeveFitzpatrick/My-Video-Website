@@ -1,8 +1,7 @@
-<div class="dropdown-menu-nobootstrap">
-    <button class="button-dropdown nav-items">Hi, {{user.username}}</button>
+
+    <a class="welcome-user">Hi, {{user.username}}</a>
     <div class="dropdown-menu-items">
         <form action="/users/logout" method="post">
-            <button class="nav-items" type="submit">Log out</button>
+            <button class="button-logout" type="submit">Log out</button>
         </form>
     </div>
-</div>

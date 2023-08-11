@@ -20,7 +20,9 @@
         <div class="comment-section">
             <div class="comment-box">
                 <textarea id="commentText" class="commentText" type="text" data-postid="{{post.id}}"></textarea>
-                <button id="comment-button" class="commentboxbutton" aria-hidden="true" data-postid="{{post.id}}"></button>
+                <button id="comment-button" class="comment-button" aria-hidden="true" data-postid="{{post.id}}">
+                    Comment
+                </button>
             </div>
             <div id="commentsList" class="comments">
                {{#each post.comments}}

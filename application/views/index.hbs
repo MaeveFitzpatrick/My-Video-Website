@@ -5,6 +5,15 @@
             <h1>
                 <img src='../public/images/house.png' alt="house" width="30px" height="25px"> Home 
             </h1>
+            <h3>
+                Welcome to our website!
+            </h3>
+            
+                    <form action="/posts/search" method="get" >
+                        <button  id="suggestedButton" class="suggestedButton" type="submit" name="key" value="{{searchValue}}">
+                            Click here to see some suggested videos.
+                            </button>
+                    </form>
         </header>
         
         {{#each results}}
