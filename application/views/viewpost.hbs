@@ -1,12 +1,13 @@
 
     
     <main class="viewpost-container">
-        <header class="viewpost-header">
+            <header class="viewpost-header">
             <h1>
-                <img src="../images/tvscreen.png" alt="tv screen" width="35px" height="25px"> View Your Post
+                <img src='../public/images/tvscreen.png' alt="tv screen" width="35px" height="25px"> View Your Post
             </h1>
         </header>
-        <div class="display">
+
+            <div class="display">
             <h2>{{post.title}}</h2>
             <p>{{post.username}}</p>
             <p>{{formatDateString post.createdAt}}</p>
@@ -16,5 +17,18 @@
             </video>
             <h4>Comments:</h4>
         </div>
+        <div class="comment-section">
+            <div class="comment-box">
+                <textarea id="commentText" class="commentText" type="text" data-postid="{{post.id}}"></textarea>
+                <button id="comment-button" class="commentboxbutton" aria-hidden="true" data-postid="{{post.id}}"></button>
+            </div>
+            <div id="commentsList" class="comments">
+               {{#each post.comments}}
+                    {{> comment this}}
+               {{/each}}
+            </div>
+        </div>
+        
+        
         
     </main>

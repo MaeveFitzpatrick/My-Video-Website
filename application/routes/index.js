@@ -11,16 +11,16 @@ function(req, res, next) {
 });
 
 router.get("/login", function(req,res,next){
-  res.render('login',{title:"Login", css:["formstyle.css"]})
+  res.render('login',{title:"Login", css:["style.css"]})
 });
 
 router.get("/registration", function(req,res,next){
-  res.render('registration',{title:"Registration", css:["formstyle.css"]})
+  res.render('registration',{title:"Registration", css:["style.css"]})
 });
 
 
 router.get("/postvideo", isLoggedIn, function(req,res,next){
-  res.render('postvideo',{title:"Post Video", css:["formstyle.css"]/*, js:["validation.js"]*/})
+  res.render('postvideo',{title:"Post Video", css:["style.css"]/*, js:["validation.js"]*/})
 });
 
 

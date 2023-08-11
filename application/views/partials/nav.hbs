@@ -1,34 +1,36 @@
 <nav>
             <ul>
                 <li>
-                    <img src="../images/house.png" alt="house" width="20px" height="15px">
+                    <img src='../../public/images/house.png' alt="house" width="20px" height="15px">
                     <a href="/">Home</a>
                 </li>
                 {{#if isLoggedIn}}
                    {{> userdropdown}}
                 {{else}}
                     <li>
-                        <img src="../images/lock.png" alt="lock" width="15px" height="15px">
+                        <img src='../../public/images/lock.png' alt="lock" width="15px" height="15px">
                         <a href="/login">Log In</a>
                     </li>
                 {{/if}}
                 
                 <li>
-                    <img src="../images/paper2.png" alt="register" width="20px" height="17px">
+                    <img src='../../public/images/paper2.png' alt="register" width="20px" height="17px">
                     <a href="/registration">Register</a>
                 </li>
                 <li>
-                    <img src="../images/filmclapper.png" alt="film clapper" width="25px" height="15px">
+                    <img src='../../public/images/filmclapper.png'alt="film clapper" width="25px" height="15px">
                     <a href="/postvideo">Post Video</a>
                 </li>
-                <li>
-                    <img src="../images/tvscreen.png" alt="tv screen" width="25px" height="15px">
+                {{!-- <li>
+                    <img src='../../public/images/tvscreen.png' alt="tv screen" width="25px" height="15px">
                     <a href="/viewpost"> View Post</a>
-                </li>
+                </li> --}}
                 <li class="searchBar">
                     <form action="/posts/search" method="get" >
                         <input id="searchText" class="searchText" type="text" name="key" value="{{searchValue}}"/>
-                        <button id="searchButton" class="searchButton" type="submit">Search</button>
+                        <button  id="searchButton" class="searchButton" type="submit">
+                            <img src='../../public/images/search_magglass.png' alt="search" width="10px" height="10px">
+                            </button>
                     </div>
                     </form>
                     

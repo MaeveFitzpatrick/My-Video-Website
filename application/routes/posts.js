@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var multer = require('multer');
-const {makeThumbnail, getPostById} = require('../middleware/posts');
+const {makeThumbnail, getPostById, getCommentsForPostById} = require('../middleware/posts');
 const { isLoggedIn } = require('../middleware/auth');
 const db = require('../config/database');
 
@@ -78,7 +78,7 @@ router.get("/search", async function(req,res,next){
 
 
 
-router.get("/:id(\\d+)", getPostById, getCommentsForPostById,function(req,res,next){
+router.get("/:id(\\d+)", getPostById,function(req,res,next){
     res.render("viewpost",{
       title:`View Post ${req.params.id}`, 
       js:["viewpost.js"]

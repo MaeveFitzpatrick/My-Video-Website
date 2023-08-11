@@ -5,6 +5,67 @@
     --font2: 'Caveat', san-seriff;
 }
 
+.main-content {
+  background-color: green;
+  animation: fadeOut 200s;
+}
+.comment{
+
+}
+
+.comment-author{
+
+}
+
+.comment-date{
+
+}
+
+.comment-text{
+
+}
+.commentsList{
+
+}
+
+.commentsButton{
+
+}
+
+.commentText{
+
+}
+
+.searchButton {
+
+}
+
+.index-container{
+
+}
+
+.searchBar{
+  
+}
+.searchButton{
+  background-color: aquamarine;
+  
+}
+.login-container {
+  display:grid;
+  grid-area: auto;
+}
+
+.register-container{
+  display: grid;
+  justify-content: center;
+    grid-template-columns: 1 fr, 2fr, 1fr;
+    grid-column: 2;
+    
+}
+.viewpost-container{
+  display:grid;
+}
 h1{
   margin-block: 0px;
 }
@@ -30,18 +91,7 @@ h5{
   margin-block: 0px;
 }
 
-.login-container {
-  display:grid;
-  grid-area: auto;
-}
 
-.register-container{
-  display: grid;
-  justify-content: center;
-    grid-template-columns: 1 fr, 2fr, 1fr;
-    grid-column: 2;
-    
-}
 
 .welcome-page {
   padding:20px;
@@ -63,10 +113,7 @@ body {
 
 
 
-.main-content {
-  background-color: green;
-  animation: fadeOut 200s;
-}
+
 
 main {
   display:grid;

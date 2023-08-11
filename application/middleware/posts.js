@@ -23,10 +23,10 @@ module.exports = {
 
     getPostById: async function(req,res,next){
 
-        var { id } = req.params;
+        const { id } = req.params;
         
         try{
-            var [results, _] = await db.execute(`SELECT p.id, p.title, p.description, p.video, p.createdAt, u.username
+            const [results, _] = await db.execute(`SELECT p.id, p.title, p.description, p.video, p.createdAt, u.username
             FROM posts p
             JOIN users u
             ON fk_userid = u.id
@@ -48,8 +48,18 @@ module.exports = {
         }
     },
     getCommentsForPostsById: async function(req,res,next){
-
-        next();
+        const { id } = req.params;
+        try{
+        var [results, _] = await db.execute(`SELECT c.id, c.text, c.createdAt, u.username
+            from comments c
+            JOIN users u
+            ON c.fk_userid = u.id
+            WHERE c.fk_postid=?;`,[id]);
+            res.locals.post.comments=results;
+            next();
+        }catch(error){
+            next(error);
+        }
     }
     ,
     getRecentPosts: async function(req,res,next){
